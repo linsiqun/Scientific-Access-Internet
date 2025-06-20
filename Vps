@@ -1,1 +1,50 @@
+sudo ufw disable    #关闭防火墙
+
+
+bash <(wget -qO- https://raw.githubusercontent.com/fscarmen/sing-box/main/sing-box.sh)   #sb一键脚本
+
+
+apt update
+apt install screen    #Debian/Ubuntu系统 
+yum install screen   #centos系统 
+screen -S gost       #创建新窗口
+
+
+apt-get install wget     #wget系统
+
+
+wget -N --no-check-certificate https://github.com/ginuerzh/gost/releases/download/v2.11.0/gost-linux-amd64-2.11.0.gz && gzip -d gost-linux-amd64-2.11.0.gz     #中转一键安装脚本
+
+wget --no-check-certificate -O gost.sh https://raw.githubusercontent.com/KANIKIG/Multi-EasyGost/master/gost.sh && chmod +x gost.sh && ./gost.sh     #中转一键安装脚本2
+
+
+mv gost-linux-amd64-2.11.0 gost      #命名为gost
+
+chmod +x gost      #给gost文件添加可执行权限
+
+./gost -L udp://:3333 -L tcp://:3333 -F relay+tls://落地ip:8888 >> /dev/null 2>&1 &     #中转服务器代码
+
+./gost -L relay+tls://:8888/要把落地机的域名添加上:443 >> /dev/null 2>&1 &       #落地服务器代码
+
+./gost.sh       #管理面板命令
+
+ufw allow 80   #非常重要
+ufw allow 443   #非常重要
+
+firewall-cmd --zone=public --add-port=端口号/tcp --permanent      #放行端口1
+iptables -A INPUT -p tcp --dport 端口号 -j ACCEPT     #放行端口2
+ufw allow 端口号     #放行端口3
+
+systemctl stop firewalld.service    #关闭防火墙1
+service iptables stop   #关闭防火墙2
+ufw disable    #关闭防火墙3
+
+
+bash <(curl -fsSL https://raw.githubusercontent.com/slobys/SSL-Renewal/main/acme.sh)      #一键申请SSL证书
+
+
+bash <(curl -Ls https://raw.githubusercontent.com/alireza0/s-ui/master/install.sh)      #一键搭建Sing-Box和Xray面板
+
+
+bash <(curl -fsSL https://raw.githubusercontent.com/Aurora-Admin-Panel/deploy/main/install.sh)    #中转一键安装极光面板
 
