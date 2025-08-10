@@ -13,7 +13,7 @@ ufw allow 80   #非常重要
 ## 更新-以下命令
 
 ```shell
- apt update -y \&\& apt install curl sudo wget git -y    #Debian/Ubuntu系统 
+ apt update -y && apt install curl sudo wget git -y    #Debian/Ubuntu系统 
 ```
 
 ```shell
@@ -30,7 +30,7 @@ ufw allow 80   #非常重要
 
 ./gost -L udp://:38420 -L tcp://:38420 -F relay+tls://落地:33280 >> /dev/null 2>\&1 \&     #中转服务器代码
 
-  ./gost -L relay+tls://:8888/要把落地机的域名添加上:443 >> /dev/null 2>\&1 \&      #落地服务器代码
+./gost -L relay+tls://:8888/要把落地机的域名添加上:443 >> /dev/null 2>\&1 \&      #落地服务器代码
 
 
 # 管理脚本命令
@@ -46,11 +46,14 @@ ufw allow 80   #非常重要
 
 ## 准备工作
 
+
+
       准备两台VPS，一台用来做中转机、一台用来做落地机
 
       提前在落地机部署对应的节点--提前在落地机中部署了3X-UI面板
 
       提前做好中转机和落地架的域名解析
+
 
 
 ## 一键申请SSL证书：【https://github.com/slobys/docker】
