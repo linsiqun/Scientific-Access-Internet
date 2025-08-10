@@ -12,16 +12,17 @@ ufw allow 80   #非常重要
 
 ## 更新-以下命令
 
+
 ```shell
  apt update -y && apt install curl sudo wget git -y    #Debian/Ubuntu系统 
 ```
 
 ```shell
- wget -N --no-check-certificate https://github.com/ginuerzh/gost/releases/downloadv2.11.0gost-linux-amd64-2.11.0.gz && gzip-d gost-linux-amd64-2.11.0.gz     #中转一键键搭脚本
+ wget -N --no-check-certificate https://github.com/ginuerzh/gost/releases/downloadv2.11.0gost-linux-amd64-2.11.0.gz && gzip-d gost-linux-amd64-2.11.0.gz     #一键键搭脚本
 ```
 
 ```shell
- wget --no-check-certificate -O gost.sh https://raw.githubusercontent.com/KANIKIG/Multi-EasyGost/master/gost.sh && chmod +x gost.sh && ./gost.sh     #中转一键安装脚本2
+ wget --no-check-certificate -O gost.sh https://raw.githubusercontent.com/KANIKIG/Multi-EasyGost/master/gost.sh && chmod +x gost.sh && ./gost.sh     #中转一键安装脚本
 ```
 
    
@@ -45,7 +46,6 @@ ufw allow 80   #非常重要
 
 
 ## 准备工作
-
 
 
 准备两台VPS，一台用来做中转机、一台用来做落地机
