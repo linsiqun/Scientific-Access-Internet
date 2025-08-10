@@ -173,7 +173,6 @@ apt update -y     #更新系统
 更新系统的根证书
 
 
-
 ```shell
 apt-get install ca-certificates wget -y && update-ca-certificates     #更新系统的根证书
 ```
