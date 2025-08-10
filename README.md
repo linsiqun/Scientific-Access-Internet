@@ -48,11 +48,11 @@ ufw allow 80   #非常重要
 
 
 
-      准备两台VPS，一台用来做中转机、一台用来做落地机
+准备两台VPS，一台用来做中转机、一台用来做落地机
 
-      提前在落地机部署对应的节点--提前在落地机中部署了3X-UI面板
+提前在落地机部署对应的节点--提前在落地机中部署了3X-UI面板
 
-      提前做好中转机和落地架的域名解析
+提前做好中转机和落地架的域名解析
 
 
 
@@ -307,6 +307,3 @@ bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.
 ③vless+ws+tls 443
 
 ④vless+tcp+tls 
-
-
-
